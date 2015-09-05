@@ -32,15 +32,42 @@
 #endif
 
 #include "GERAALT.H"
+/***********************************************************************
+*
+*  $TC Tipo de dados: MAT Condicoes de retorno
+*
+*
+***********************************************************************/
+
+   typedef enum {
+
+         DAD_CondRetOK = 0 ,
+               /* Executou correto */
+
+         DAD_CondRetErro = 1 ,
+               /* Estrutura do DadoPontos está errada */
+
+         DAD_CondRetMatrizNaoExiste = 2 ,
+               /* DadoPontos não existe */
+
+         DAD_CondRetFaltouMemoria = 3
+               /* Faltou memória ao alocar dados */
+
+   } DAD_tpCondRet ;
 
 /***********************************************************************
 *
 *  $FC Função: DAD  &Gerar o numero de casas a serem paladas
 *
 *  $ED Descrição da função
-*
-*  $EP Parâmetros
-*
+*	  Retorno o numero da casas a serem andadas
+*  $FV Valor retonado
+*     DAD_CondRetOK
+*     DAD_CondRetFaltouMemoria
 ***********************************************************************/
 
-int DAD_NumPular( void*) ;
+DAD_tpCondRet DAD_NumPular( void*, int*NumeroCasas) ;
+
+#undef DADO_EXT
+
+/*************** Fim do módulo de definição: Módulo Dado ****************/
