@@ -34,7 +34,7 @@
 *  Função: DAD & gerar o numero de casas que devem ser puladas com 1 dado
 *  ****/
 
-int DAD_NumPular(void*)
+DAD_tpCondRet DAD_NumPular(void*, int *NumeroCasas)
 {
 	unsigned int i = 1;
 	int DadoInicio = 1;
@@ -42,11 +42,14 @@ int DAD_NumPular(void*)
 	int *NumeroCasasPular;
 
 	ALT_Inicializar( i );
-	*NumeroCasasPular = ALT_GerarDistUniforme( DadoInicio, DadoFim );
+	NumeroCasasPular = (int*)ALT_GerarDistUniforme( DadoInicio, DadoFim );
+	NumeroCasas = NumeroCasasPular;
 
-	return 1;
-}
+	return DAD_CondRetOK;
+}/*Fim da função DAD_NumPular */
 
+
+/*********** Fim do módulo de implementação: Módulo Dado **************/
 
 
 
