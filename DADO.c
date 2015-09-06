@@ -22,7 +22,6 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include "DADO.H"  
 #include "GERAALT.H"
 
 #define DADO_OWN
@@ -34,7 +33,7 @@
 *  Função: DAD & gerar o numero de casas que devem ser puladas com 1 dado
 *  ****/
 
-DAD_tpCondRet DAD_NumPular(void*, int *NumeroCasas)
+DAD_tpCondRet DAD_NumPular(int *NumeroCasas)
 {
 	unsigned int i = 1;
 	int DadoInicio = 1;

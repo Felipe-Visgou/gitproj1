@@ -31,9 +31,8 @@
    #define DADOPONTOS_EXT extern
 #endif
 
-#include "LISTA.H"
-
 typedef struct tgDadoPontos * tppDadoPontos;
+typedef struct tgPlayers * tppPlayers;
 /***********************************************************************
 *
 *  $TC Tipo de dados: MAT Condicoes de retorno
@@ -70,7 +69,7 @@ typedef struct tgDadoPontos * tppDadoPontos;
 *
 ***********************************************************************/
 
-DADPnt_tpCondRet DADPtn_CriarDado(tppDadoPontos * Dado)
+DADPnt_tpCondRet DADPtn_CriarDado(tppDadoPontos * Dado);
 
 /***************************************************************************
 *
@@ -98,7 +97,20 @@ DADPnt_tpCondRet DADPtn_DobrarDado(tppDadoPontos Dado);
 *
 ***********************************************************************/
 
-DADPnt_tpCondRet DADPtn_MudDono(tppDadoPontos Dado);
+DADPnt_tpCondRet DADPtn_MudDono(tppDadoPontos Dado, tppPlayers * Novo);
+
+/***************************************************************************
+*
+*  $FC Função: DADPnt Valor da partida
+*
+*  $ED Descrição da função
+*	  Gera o valor atual da partida
+*  $FV Valor retonado
+*     DADPnt_CondRetOK
+*
+***********************************************************************/
+
+DADPnt_tpCondRet DADPtn_ValorPartida(tppDadoPontos Dado, int * valorjogo);
 
 /***************************************************************************
 *
