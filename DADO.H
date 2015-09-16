@@ -66,7 +66,7 @@
 *     DAD_CondRetFaltouMemoria
 ***********************************************************************/
 
-DAD_tpCondRet DAD_NumPular( void*, int*NumeroCasas) ;
+DAD_tpCondRet DAD_NumPular(int *NumeroCasas) ;
 
 #undef DADO_EXT
 
