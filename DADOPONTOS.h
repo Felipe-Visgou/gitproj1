@@ -69,7 +69,7 @@ typedef struct tgPlayers * tppPlayers;
 *
 ***********************************************************************/
 
-DADPnt_tpCondRet DADPtn_CriarDado(tppDadoPontos * Dado);
+DADPnt_tpCondRet DADPtn_CriarDado(tppDadoPontos * DadoCriado);
 
 /***************************************************************************
 *
@@ -83,7 +83,7 @@ DADPnt_tpCondRet DADPtn_CriarDado(tppDadoPontos * Dado);
 *
 ***********************************************************************/
 
-DADPnt_tpCondRet DADPtn_DobrarDado(tppDadoPontos Dado);
+DADPnt_tpCondRet DADPtn_DobrarDado(tppDadoPontos DadoDobrar);
 
 /***************************************************************************
 *
@@ -97,7 +97,7 @@ DADPnt_tpCondRet DADPtn_DobrarDado(tppDadoPontos Dado);
 *
 ***********************************************************************/
 
-DADPnt_tpCondRet DADPtn_MudDono(tppDadoPontos Dado, tppPlayers * Novo);
+DADPnt_tpCondRet DADPtn_MudDono(tppDadoPontos DadoDono, char * cor);
 
 /***************************************************************************
 *
