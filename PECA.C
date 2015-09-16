@@ -39,10 +39,10 @@
 typedef struct tgPeca{
 	int *posicao;
 	/*Pontei para a posicao da peca, ainda deve ser alterado pelo tipo correto.*/
-	int *cor;
+	char *cor;
 	/*Devemos usar um inteiro para facilitar a manipulacao da peça pela cor? Porem a cor tambem determia qual jogador 
 	tem a posse da peca*/
-	struct tpp * jogador;
+	//struct tpp * jogador;
 } tpPeca;
 
 
@@ -56,20 +56,30 @@ typedef struct tgPeca{
 *  Função: Pec Criar Peça
 *  ****/
 
-Pec_tpCondRet Pec_CriarPeca(tppPec * PecCriado);
+Pec_tpCondRet Pec_CriarPeca(tppPeca * PecCriado1, char * CorDaNovaPeca)
+{
+	struct tgPeca * PecaNova;
+	PecaNova= (tgPeca*)malloc(sizeof(tgPeca));
+	if(PecaNova == NULL)
+		return Pec_CondRetFaltouMemoria;
+	PecaNova->cor = CorDaNovaPeca;
+	(*PecCriado1) = PecaNova;
+	return Pec_CondRetOK;
+}
 
 /***************************************************************************
 *
 *  Função: PEC Destruir Peça
 *  ****/
 
-Pec_tpCondRet Pec_DestruirPeca(tppPec * Peca);
-
+Pec_tpCondRet Pec_DestruirPeca(tppPeca * Peca)
+{
+}
 /***************************************************************************
 *
 *  Função: PEC Obter Cor
 *  ****/
 
-Pec_tpCondRet Pec_ObterCor(tppPec * Peca);
+Pec_tpCondRet Pec_ObterCor(tppPeca * Peca);
 
 /*********** Fim do módulo de implementação: Módulo DadoPontos **************/

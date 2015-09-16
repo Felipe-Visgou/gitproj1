@@ -31,7 +31,7 @@
    #define PECA_EXT extern
 #endif
 
-typedef struct tgPec * tppPec;
+typedef struct tgPeca * tppPeca;
 
 /***********************************************************************
 *
@@ -68,7 +68,7 @@ typedef struct tgPec * tppPec;
 *
 ***********************************************************************/
 
-   Pec_tpCondRet Pec_CriarPeca(tppPec * PecCriado);
+   Pec_tpCondRet Pec_CriarPeca(tppPeca * PecCriado);
 
 /***********************************************************************
 *
@@ -82,7 +82,7 @@ typedef struct tgPec * tppPec;
 *
 ***********************************************************************/
 
-   Pec_tpCondRet Pec_DestruirPeca(tppPec * Peca);
+   Pec_tpCondRet Pec_DestruirPeca(tppPeca * Peca);
 
 /***********************************************************************
 *
@@ -95,4 +95,4 @@ typedef struct tgPec * tppPec;
 *     Pec_CondRetFaltouMemoria
 *
 ***********************************************************************/
-   Pec_tpCondRet Pec_ObterCor(tppPec * Peca);
+   Pec_tpCondRet Pec_ObterCor(tppPeca * Peca);
