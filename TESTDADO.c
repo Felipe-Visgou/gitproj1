@@ -109,12 +109,9 @@
                return TST_CondRetParm ;
             } /* if */
 
-			while( i < 60) {
 			CondRetObtido = DAD_NumPular(&valorDado) ;
 
 			printf(" \n dado: %d\n", valorDado);
-			i++;
-			}
 
             return TST_CondRetOK;
 
