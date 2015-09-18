@@ -23,10 +23,10 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include <time.h>
-#include "GERAALT.H"
 
 #define DADO_OWN
 #include "DADO.h"
+#include <assert.h>
 #undef DADO_OWN
 #define RAN_MAX 0x7fff
 
@@ -44,23 +44,37 @@ int dadorand(void);
 
 DAD_tpCondRet DAD_NumPular(int *NumeroCasas)
 {
-	unsigned int i = 1;
-	int DadoInicio = 1;
-	int DadoFim = 6;
-
-	//ALT_Inicializar( i );
-	*NumeroCasas = dadorand();
+	*NumeroCasas = randint(6);
 
 	return DAD_CondRetOK;
 }/*Fim da função DAD_NumPular */
 
 /* Função usada pelo módulo */
-int dadorand(void)
-{
-	int dado;
-	srand( 3141592653 |(unsigned)time(NULL));
 
-	return rand()%6+1;
+
+/* Returns an integer in the range [1, n].
+ *
+ * Uses rand(), and so is affected-by/affects the same seed.
+ */
+int randint(int n) {
+  int r;
+  if ((n - 1) == RAND_MAX) {
+    return rand();
+  } else {
+    // Chop off all of the values that would cause skew...
+    long end = RAND_MAX / n; // truncate skew
+    assert (end > 0L);
+    end *= n;
+
+    // ... and ignore results from rand() that fall above that limit.
+    // (Worst case the loop condition should succeed 50% of the time,
+    // so we can expect to bail out of this loop pretty quickly.
+    while ((r = rand()) >= end);
+
+	r = (r|time(NULL));
+
+    return (r % n) +1;
+  }
 }
 /*********** Fim do módulo de implementação: Módulo Dado **************/
 

@@ -31,7 +31,6 @@
    #define DADO_EXT extern
 #endif
 
-#include "GERAALT.H"
 /***********************************************************************
 *
 *  $TC Tipo de dados: MAT Condicoes de retorno
