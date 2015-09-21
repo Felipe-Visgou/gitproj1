@@ -60,7 +60,6 @@
 
       double x ;
       int i ;
-
       do
       {
          x  = rand( ) ;                 /* converte para flutuante */
