@@ -36,12 +36,11 @@
 =obterdono 0 'b' 0
 
 == Obter Valor Errado
-=obtervalorpartida 0 63 0
+=obtervalorpartida 0 63 1
 =recuperar
 
 == Obter Valor
 =obtervalorpartida 0 64 0
-
 
 == Destruir DadoPontos
 =destruirdadoponto 0 0

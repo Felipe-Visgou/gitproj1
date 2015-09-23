@@ -110,7 +110,11 @@ tppDadoPontos P[MAX];
 
 
             return TST_CompararInt( CondRetEsperada , CondRetObtido ,
+<<<<<<< HEAD
                                     "Retorno errado ao criar a peca." );
+=======
+                                    "Retorno errado ao criar ao criar dadopontos." );
+>>>>>>> b28b4c52796df7303d083d4685da86f57afaf00e
 
          } 
 		 /* fim ativa: Testar  Criar Dado Pontos */
@@ -154,10 +158,17 @@ tppDadoPontos P[MAX];
                return Ret ;
             } /* if */
 
+<<<<<<< HEAD
 			return TST_CompararChar(CondRetObtido, CondRetEsperada, "Retorno errado ao obter o valor da peca");
 
          }
 		 /* fim ativa: Testar DadoPontos Dobrar Dado*/
+=======
+			return TST_CompararChar(CondRetObtido, CondRetEsperada, "Retorno errado ao obter o dono do dado");
+
+         }
+		 /* fim ativa: Testar Obter Dono do DadoPonto*/
+>>>>>>> b28b4c52796df7303d083d4685da86f57afaf00e
 
 		 /* Testar  Dadoponto DobrarDado */
          else if ( strcmp( ComandoTeste , DOBRAR_DADO_CMD ) == 0 )
@@ -174,11 +185,19 @@ tppDadoPontos P[MAX];
             CondRetObtido = DADPtn_DobrarDado(P[inxpec],corEsperada);
 
             return TST_CompararInt( CondRetEsperada , CondRetObtido ,
+<<<<<<< HEAD
                                     "Retorno errado ao criar a peca." );
 
          } /* fim ativa: Fim Dobrar Dado */
 
 		 /* Testar  Dadoponto Valor Partida */
+=======
+                                    "Retorno errado ao dobrar o valor do dadopontos." );
+
+         } /* fim ativa: Fim Dobrar Dado */
+
+		 /* Testar  Dadoponto Obter Valor */
+>>>>>>> b28b4c52796df7303d083d4685da86f57afaf00e
          else if ( strcmp( ComandoTeste , OBTER_VALORPARTIDA_CMD ) == 0 )
          {
 
@@ -192,6 +211,7 @@ tppDadoPontos P[MAX];
 
             CondRetObtido = DADPtn_ValorPartida(P[inxpec],&ValorPontos);
 
+<<<<<<< HEAD
 		    Ret = TST_CompararChar( valoresperado , ValorPontos , " Valor da Partida Errado" ) ;
 
             return TST_CompararInt( CondRetEsperada , CondRetObtido ,
@@ -200,6 +220,19 @@ tppDadoPontos P[MAX];
          } /* fim ativa: Fim Dobrar Dado */
 
 
+=======
+		    Ret = TST_CompararInt( valoresperado , ValorPontos , " Valor da Partida Errado" ) ;
+
+			if ( Ret != TST_CondRetOK )
+            {
+               return Ret ;
+            } 
+
+            return TST_CompararInt( CondRetObtido, CondRetEsperada ,
+                                    "Retorno errado ao obter valor do dado pontos." );
+
+         } /* fim ativa: Fim Dobrar Dado */
+>>>>>>> b28b4c52796df7303d083d4685da86f57afaf00e
 
 
       return TST_CondRetNaoConhec ;
