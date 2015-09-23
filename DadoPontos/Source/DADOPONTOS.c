@@ -24,6 +24,7 @@
 #include <stdio.h> 
 #include <malloc.h>
 #include <string.h>
+#include "GENERICO.H"
 
 #define DADO_OWN
 #include "DADOPONTOS.h"
@@ -123,6 +124,8 @@ DADPnt_tpCondRet DADPtn_ObterDono(tppDadoPontos DadoPonto, char * CorDonoAtual)
 
 DADPnt_tpCondRet DADPtn_DestruirDado(tppDadoPontos Dado)
 {
+	if(Dado == NULL)
+		return DADPnt_CondRetDadoPontosNaoExiste;
 	free(Dado);
 	return DADPnt_CondRetOK;
 }

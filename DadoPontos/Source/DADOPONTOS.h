@@ -31,6 +31,8 @@
    #define DADOPONTOS_EXT extern
 #endif
 
+#include "Generico.h"
+
 typedef struct tgDadoPontos * tppDadoPontos;
 typedef struct tgPlayers * tppPlayers;
 /***********************************************************************
@@ -48,7 +50,7 @@ typedef struct tgPlayers * tppPlayers;
          DADPnt_CondRetErro = 1 ,
                /* Estrutura do DadoPontos está errada */
 
-         DADPnt_CondRetMatrizNaoExiste = 2 ,
+         DADPnt_CondRetDadoPontosNaoExiste = 2 ,
                /* DadoPontos não existe */
 
          DADPnt_CondRetFaltouMemoria = 3
