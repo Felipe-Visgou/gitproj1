@@ -37,8 +37,6 @@
 ***********************************************************************/
 
 typedef struct tgPeca{
-	int *posicao;
-	/*Pontei para a posicao da peca, ainda deve ser alterado pelo tipo correto.*/
 	char cor;
 	/*Devemos usar um inteiro para facilitar a manipulacao da peça pela cor? Porem a cor tambem determia qual jogador 
 	tem a posse da peca*/
@@ -50,6 +48,7 @@ typedef struct tgPeca{
 
 
 /*****  Código das funções exportadas pelo módulo  *****/
+
 
 /***************************************************************************
 *

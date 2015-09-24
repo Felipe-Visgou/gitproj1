@@ -80,6 +80,8 @@ typedef struct TAB_tagTabuleiro * TAB_tppTabuleiro;
                /* Concluiu corretamente */
 		 TAB_CondRetErro,
 
+		 TAB_CondRetFaltouMemoria,
+
    } TAB_tpCondRet ;
 
 
@@ -131,7 +133,7 @@ typedef struct TAB_tagTabuleiro * TAB_tppTabuleiro;
 *
 ***********************************************************************/
 
-   void LIS_DestruirTabuleiro( TAB_tppTabuleiro pTab ) ;
+   TAB_tpCondRet TAB_DestruirTabuleiro( TAB_tppTabuleiro pTab ) ;
 
 
 /***********************************************************************
@@ -147,8 +149,7 @@ typedef struct TAB_tagTabuleiro * TAB_tppTabuleiro;
 *
 ***********************************************************************/
 
-   void TAB_MoverPeca( TAB_tppTabuleiro pTab, int casaOrigem, int casaDestino ) ;
-
+ TAB_tpCondRet TAB_MoverPeca( TAB_tppTabuleiro pTab, int casaOrigem, int casaDestino ) ;
 
 /***********************************************************************/
 

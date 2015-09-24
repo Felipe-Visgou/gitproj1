@@ -17,7 +17,7 @@
 *     3       avs   08/dez/2004 uniformização dos exemplos
 *     2       avs   07/jul/2003 unificação de todos os módulos em um só projeto
 *     1       avs   16/abr/2003 início desenvolvimento
-*
+ 
 ***************************************************************************/
 
 #include   <stdio.h>
@@ -104,9 +104,9 @@ TAB_tpCondRet TAB_CriarTabuleiro(TAB_tppTabuleiro * pTab,
 	for(i = 0; i < 24; i++)
 		LIS_InserirElementoApos((*pTab)->Casas, vtCasa[i]);
 
-	free(vtCasa);
-	free(vtPecaB);
-	free(vtPecaP);
+    //free(vtCasa);
+	//free(vtPecaB);
+	//free(vtPecaP);
 
 	return TAB_CondRetOK;
 }
@@ -115,15 +115,16 @@ TAB_tpCondRet TAB_CriarTabuleiro(TAB_tppTabuleiro * pTab,
 
 TAB_tpCondRet TAB_DestruirTabuleiro (TAB_tppTabuleiro pTab)
 {
-	LIS_tppLista temp;
-	int i;
+	//LIS_tppLista temp;
+//	int i;
 	// Destroi as 24 casas
-	for(i = 0; i < 24; i++)
+	//IrFinalLista(pTab->Casas);
+	/*for(i = 0; i < 24; i++)
 	{
 		temp = (LIS_tppLista)LIS_ObterValor(pTab->Casas);
 		LIS_DestruirLista(temp);
 		LIS_AvancarElementoCorrente(pTab->Casas, -1);
-	}
+	}*/
 	// Destroi a lista principal
 	LIS_DestruirLista(pTab->Casas);
 	// Libera o ponteiro para o  tabuleiro
@@ -131,6 +132,67 @@ TAB_tpCondRet TAB_DestruirTabuleiro (TAB_tppTabuleiro pTab)
 
 	return TAB_CondRetOK;
 }
+
+  TAB_tpCondRet TAB_MoverPeca( TAB_tppTabuleiro pTab, int casaOrigem, int casaDestino ) 
+  {
+	  tppPeca pecatemp1, pecatemp2;
+	  char cor;
+	  LIS_tppLista listatemp;
+	  int  mov = casaDestino - casaOrigem;
+
+	  // Ir para a casa de origem
+	  IrInicioLista(pTab->Casas);
+	  LIS_AvancarElementoCorrente(pTab->Casas, casaOrigem);
+
+	  // Obter referência para a lista nela armazenada
+	  listatemp = (LIS_tppLista)LIS_ObterValor(pTab->Casas);
+
+	  // Obter a cor da peca na lista temp
+	  pecatemp1 = (tppPeca)LIS_ObterValor(listatemp);
+	  // se pecatemp1 == NULL entao a lista está vazia
+	  if(pecatemp1 == NULL)
+	  {
+		  printf("casa de origem esta vazia \n");
+		  return TAB_CondRetErro;
+	  }
+	  else // se nao
+	  {
+		  Pec_ObterCor(pecatemp1, &cor);
+	  }
+
+	  // Excluir uma peça da lista temp
+	  if(LIS_ExcluirElemento(listatemp) != LIS_CondRetOK)
+	  {
+		  printf("Erro ao excluir peca da casa de orgiem\n");
+		  return TAB_CondRetErro;
+	  }
+
+	  // Avança para a casa destino
+	  LIS_AvancarElementoCorrente(pTab->Casas, mov);
+
+	  // Obtem a referencia para a lista nela armazenada
+	  listatemp = (LIS_tppLista)LIS_ObterValor(pTab->Casas);
+
+	  // Criar uma peça com a mesma cor q a peça antiga
+	  if(Pec_CriarPeca(&pecatemp2, cor) != Pec_CondRetOK)
+	  {
+		  printf("Erro ao criar a peca na casa destino \n");
+		  return TAB_CondRetErro;
+	  }
+
+	  // Adiciona esta peça na casa de destino
+	 if(LIS_InserirElementoApos(listatemp, pecatemp2) != LIS_CondRetOK)
+	 {
+		 printf("Erro ao adicionar peca na casa destino \n");
+		 return TAB_CondRetErro;
+	 }
+
+	 return TAB_CondRetOK;
+  }
+
+
+
+
 
 
 
