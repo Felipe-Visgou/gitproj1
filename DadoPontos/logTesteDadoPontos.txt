@@ -20,17 +20,18 @@ LES - Laboratório de Engenharia de Software DI/PUC-Rio
    25  == Dobrar Dado
    28  == Dobrar Dado
    31  == Obter Valor
-   34  == Dobrar Dado
-   37  == Obter Dono
-   40  == Obter Valor Errado
->>>    1  Linha:    41   Valor da Partida Errado Deveria ser: 63  É: 64
-<<<    0  Linha:    42  Falha esperada foi recuperada. 
-   44  == Obter Valor
-   47  == Destruir DadoPontos
+   34  == Dobrar Dado Errado (Nao eh dono do dado)
+   37  == Dobrar Dado
+   40  == Obter Dono
+   43  == Obter Valor Errado
+>>>    1  Linha:    44   Valor da Partida Errado Deveria ser: 63  É: 64
+<<<    0  Linha:    45  Falha esperada foi recuperada. 
+   47  == Obter Valor
+   50  == Destruir DadoPontos
 
-!!! Número de linhas lidas:          48
-!!! Número de casos de teste:        15
-!!! Número comandos corretos:        14
+!!! Número de linhas lidas:          51
+!!! Número de casos de teste:        16
+!!! Número comandos corretos:        15
 !!! Número de falhas encontradas:     0
 
 !!! Não foram encontrados problemas

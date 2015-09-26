@@ -80,6 +80,8 @@ DADPnt_tpCondRet DADPnt_CriarDado(tppDadoPontos * DadoPontoCriado)
 
 DADPnt_tpCondRet DADPnt_DobrarDado(tppDadoPontos DadoDobrar, char CorNovoDono)
 {
+	if(CorNovoDono == DadoDobrar->CorDoJogador)
+		return DADPnt_CondRetErro;
 	DadoDobrar->valor = DadoDobrar->valor * 2;
 	/*Pega o valor atual do dado e multiplica por 2*/
 	DadoDobrar->CorDoJogador = CorNovoDono;

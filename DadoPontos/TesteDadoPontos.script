@@ -31,6 +31,9 @@
 == Obter Valor
 =obtervalorpartida 32 0
 
+== Dobrar Dado Errado (Nao eh dono do dado)
+=dobrardado 'p' 1
+
 == Dobrar Dado
 =dobrardado 'b' 0
 
