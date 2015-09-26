@@ -9,15 +9,13 @@
 *
 *  Projeto: Disciplinas INF 1628 / 1301
 *  Gestor:  DI/PUC-Rio
-*  Autores: avs - Arndt von Staa
-*			fvc - Felipe Vieira Côrtes
+*  Autores:	fvc - Felipe Vieira Côrtes
 *			tbm - Tássio Borges de Miranda
 *			db  - Daniela Brazão
-
 *
 *  $HA Histórico de evolução:
 *     Versão  Autor    Data     Observações
-*       1.00   avs   15/08/2001 Início do desenvolvimento
+*       1.00   fvc   15/08/2001 Início e término do desenvolvimento
 *
 *  $ED Descrição do módulo
 *     Este módulo implementa um conjunto simples de funções para gerar o resultado
@@ -33,7 +31,7 @@
 
 /***********************************************************************
 *
-*  $TC Tipo de dados: MAT Condicoes de retorno
+*  $TC Tipo de dados: DAD Condicoes de retorno
 *
 *
 ***********************************************************************/
@@ -56,7 +54,7 @@
 
 /***********************************************************************
 *
-*  $FC Função: DAD  &Gerar o numero de casas a serem paladas
+*  $FC Função: DAD  &Gerar o numero de casas a serem puladas
 *
 *  $ED Descrição da função
 *	  Retorno o numero da casas a serem andadas

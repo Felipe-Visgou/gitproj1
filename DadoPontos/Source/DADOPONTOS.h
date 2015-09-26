@@ -9,8 +9,7 @@
 *
 *  Projeto: Disciplinas INF 1628 / 1301
 *  Gestor:  DI/PUC-Rio
-*  Autores: avs - Arndt von Staa
-*			fvc - Felipe Vieira Côrtes
+*  Autores: fvc - Felipe Vieira Côrtes
 *			tbm - Tássio Borges de Miranda
 *			db  - Daniela Brazão
 
@@ -37,7 +36,7 @@ typedef struct tgDadoPontos * tppDadoPontos;
 typedef struct tgPlayers * tppPlayers;
 /***********************************************************************
 *
-*  $TC Tipo de dados: MAT Condicoes de retorno
+*  $TC Tipo de dados: DADPnt Condicoes de retorno
 *
 *
 ***********************************************************************/
@@ -71,7 +70,7 @@ typedef struct tgPlayers * tppPlayers;
 *
 ***********************************************************************/
 
-DADPnt_tpCondRet DADPtn_CriarDado(tppDadoPontos * DadoCriado);
+DADPnt_tpCondRet DADPnt_CriarDado(tppDadoPontos * DadoCriado);
 
 /***************************************************************************
 *
@@ -85,7 +84,7 @@ DADPnt_tpCondRet DADPtn_CriarDado(tppDadoPontos * DadoCriado);
 *
 ***********************************************************************/
 
-DADPnt_tpCondRet DADPtn_DobrarDado(tppDadoPontos DadoDobrar, char CorNovoDono);
+DADPnt_tpCondRet DADPnt_DobrarDado(tppDadoPontos DadoDobrar, char CorNovoDono);
 
 /***************************************************************************
 *
@@ -98,7 +97,7 @@ DADPnt_tpCondRet DADPtn_DobrarDado(tppDadoPontos DadoDobrar, char CorNovoDono);
 *
 ***********************************************************************/
 
-DADPnt_tpCondRet DADPtn_ValorPartida(tppDadoPontos Dado, int * valorjogo);
+DADPnt_tpCondRet DADPnt_ValorPartida(tppDadoPontos Dado, int * valorjogo);
 
 /***************************************************************************
 *
@@ -111,7 +110,7 @@ DADPnt_tpCondRet DADPtn_ValorPartida(tppDadoPontos Dado, int * valorjogo);
 *
 ***********************************************************************/
 
-DADPnt_tpCondRet DADPtn_ObterDono(tppDadoPontos Dado, char * corRecebida);
+DADPnt_tpCondRet DADPnt_ObterDono(tppDadoPontos Dado, char * corRecebida);
 
 /***************************************************************************
 *
@@ -125,7 +124,7 @@ DADPnt_tpCondRet DADPtn_ObterDono(tppDadoPontos Dado, char * corRecebida);
 *
 ***********************************************************************/
 
-DADPnt_tpCondRet DADPtn_DestruirDado(tppDadoPontos Dado);
+DADPnt_tpCondRet DADPnt_DestruirDado(tppDadoPontos Dado);
 
 #undef DADOPONTOS_EXT
 

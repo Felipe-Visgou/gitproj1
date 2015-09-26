@@ -19,7 +19,7 @@ LES - Laboratório de Engenharia de Software DI/PUC-Rio
    15  == Testar obter a cor da peca 1 (branca)
    18  == Destruir as duas pecas
 
-!!! Número de linhas lidas:          21
+!!! Número de linhas lidas:          20
 !!! Número de casos de teste:         5
 !!! Número comandos corretos:         6
 !!! Número de falhas encontradas:     0

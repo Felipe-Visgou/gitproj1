@@ -2,14 +2,14 @@
 *  $MCI Módulo de implementação: Gerador de numeroes aleatorios restrito ao
 *								 numero de faces 
 *
-*  Arquivo gerado:              DADO.c
-*  Letras identificadoras:      DAD
+*  Arquivo gerado:              DADOPONTOS.c
+*  Letras identificadoras:      DADPnt
 *
 *  Nome da base de software:    Exemplo de teste automatizado
 *
 *  Projeto: Disciplinas INF 1628 / 1301
 *  Gestor:  DI/PUC-Rio
-*  Autores: avs - Arndt von Staa
+*  Autores: 
 *			fvc - Felipe Vieira Côrtes
 *			tbm - Tássio Borges de Miranda
 *			db  - Daniela Brazão
@@ -58,7 +58,7 @@
 *  Função: DADPnt Criar Dado de Pontos
 *  ****/
 
-DADPnt_tpCondRet DADPtn_CriarDado(tppDadoPontos * DadoPontoCriado)
+DADPnt_tpCondRet DADPnt_CriarDado(tppDadoPontos * DadoPontoCriado)
 {
 
 	*DadoPontoCriado = (tpDadoPontos*)malloc(sizeof(tpDadoPontos));
@@ -78,11 +78,11 @@ DADPnt_tpCondRet DADPtn_CriarDado(tppDadoPontos * DadoPontoCriado)
 *  Função: DADPnt Dobrar Dado de Pontos e Mudar "Dono" do Dado de Pontos
 *  ****/
 
-DADPnt_tpCondRet DADPtn_DobrarDado(tppDadoPontos DadoDobrar, char CorNovoDono)
+DADPnt_tpCondRet DADPnt_DobrarDado(tppDadoPontos DadoDobrar, char CorNovoDono)
 {
 	DadoDobrar->valor = DadoDobrar->valor * 2;
-	DadoDobrar->CorDoJogador = CorNovoDono;
 	/*Pega o valor atual do dado e multiplica por 2*/
+	DadoDobrar->CorDoJogador = CorNovoDono;
 	return  DADPnt_CondRetOK;
 }
 
@@ -91,7 +91,7 @@ DADPnt_tpCondRet DADPtn_DobrarDado(tppDadoPontos DadoDobrar, char CorNovoDono)
 *  Função: DADPnt Gerar Valor da Partida
 *  ****/
 
-DADPnt_tpCondRet DADPtn_ValorPartida(tppDadoPontos DadoAtual, int * valorjogo)
+DADPnt_tpCondRet DADPnt_ValorPartida(tppDadoPontos DadoAtual, int * valorjogo)
 {
 	if(DadoAtual->CorDoJogador == 's' )
 		*valorjogo = 2;
@@ -111,7 +111,7 @@ DADPnt_tpCondRet DADPtn_ValorPartida(tppDadoPontos DadoAtual, int * valorjogo)
 *
 ***********************************************************************/
 
-DADPnt_tpCondRet DADPtn_ObterDono(tppDadoPontos DadoPonto, char * CorDonoAtual)
+DADPnt_tpCondRet DADPnt_ObterDono(tppDadoPontos DadoPonto, char * CorDonoAtual)
 {
 	*CorDonoAtual = DadoPonto->CorDoJogador;
 	return DADPnt_CondRetOK;
@@ -122,7 +122,7 @@ DADPnt_tpCondRet DADPtn_ObterDono(tppDadoPontos DadoPonto, char * CorDonoAtual)
 *  Função: DADPnt Destruir Dado de Pontos
 *  ****/
 
-DADPnt_tpCondRet DADPtn_DestruirDado(tppDadoPontos Dado)
+DADPnt_tpCondRet DADPnt_DestruirDado(tppDadoPontos Dado)
 {
 	if(Dado == NULL)
 		return DADPnt_CondRetDadoPontosNaoExiste;

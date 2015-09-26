@@ -1,53 +1,29 @@
 /***************************************************************************
 *  $MCI Módulo de implementação: Módulo de teste específico
-
-*	Módulo modificado para operar matrizes que armazenam listas!
 *
-*  Arquivo gerado:              TESTMAT.C
-*  Letras identificadoras:      TMAT
+*  Arquivo gerado:              TESTDADO.C
+*  Letras identificadoras:      TDADO
 *
 *  Nome da base de software:    Exemplo de teste automatizado
 *
 *  Projeto: Disciplinas INF 1628 / 1301
 *  Gestor:  DI/PUC-Rio
-*  Autores: avs - Arndt von Staa
-			fvc	- Felipe Vieira Cortes
+*  Autores: fvc	- Felipe Vieira Cortes
 *			tbm - Tássio Borges de Miranda
 *			db  - Daniela Brazão
 *
 *  $HA Histórico de evolução:
 *     Versão  Autor    Data     Observações
-		4.00   fvc	 23/08/2015 Módulo modificado para operar matrizes
-*       3.00   avs   28/02/2003 Uniformização da interface das funções e
-*                               de todas as condições de retorno.
-*       2.00   avs   03/08/2002 Eliminação de código duplicado, reestruturação
-*       1.00   avs   15/08/2001 Início do desenvolvimento
+		1.00   fvc	 14/09/2015 Início e término do deselvolvimento
 *
 *  $ED Descrição do módulo
 *     Este módulo contém as funções específicas para o teste do
-*     módulo Matriz. Ilustra como redigir um interpretador de comandos
-*     de teste específicos utilizando o arcabouço de teste para C.
+*     módulo Dados, que gera um número aleatório de 1 a 6
 *
 *  $EIU Interface com o usuário pessoa
 *     Comandos de teste específicos para testar o módulo Matriz:
 *
-*     =criarmatriz		<inxmat>	<linha>		<coluna>	<CondRet> - Chama a função MAT_CriarMatriz( linha, coluna, vtMatriz[inxmat])
-*	  =criarlista		<CondRet>									  - Chama a função MAT_CriarLista( lista )
-*     =avancar			<Direção>	<inxmat>	<CondRet>			  - Chama a função MAT_Avancar(vtMatriz[inxmat], direcao )
-*																		e avança a célula corrente da matriz de acordo com a direção dada.
-																		as direções são: norte, nordeste, leste, sudeste, sul, sudoeste, oeste e noroeste
-*     =inscharantes"	<Char>		<CondRet>						  - Chama a função MAT_InserirCharAntes( lista ) e insere o char na posição posterior ao corrente
-*     =inschardepois"	<Char>		<CondRet>						  - Chama a função MAT_InserirCharDepois( lista ) e insere o char na posição anterior ao corrente
-*     "=inslista"		<inxmat>	<linha>		<coluna>	<CondRet> - chama a função MAT_InserirLista(vtMatriz[inxmat], linha, coluna )
-																		e insere a lista na posição linhaXcoluna da matriz
-*     "=excluirelem"    <CondRet>									  - Chama a função MAT_ExcluirElemento( lista ) e exclui o elemento corrente da lista
-*     "=irinicio"		<CondRet>									  - chama a função MAT_IrInicio( lista )
-*     "=irfinal"		<CondRet>									  - chama a função MAT_IrIFinal( lista )
-*     "=obtervalorelem" <Char>		<CondRet>						  - Chama a função  MAT_ObterValor( lista, charRecebido )
-																		e compara o charRecebido com o valor <Char>
-*     "=avancarelem"	<numElem>	<CondRet>					 	  - chama a função MAT_AvancarElementoCorrente( lista, numElem )
-*
-*	  "=destruirmatriz" <inxmat>	<CondRet>						  - Chama a função  MAT_DestruirMatriz( vtMatriz[inxmat] )
+*     =jogardado		chama a função DAD_tpCondRet DAD_NumPular(int* NumPular) e retorna um valor inteiro de 1 a 6 e imprime na tela
 ***************************************************************************/
 
 #include    <string.h>
@@ -64,14 +40,13 @@
 /* Tabela dos nomes dos comandos de teste específicos */
 
 #define     JOGAR_DADO_CMD     "=jogardado"
-#define     INI_DADO_CMD     "=inicializardado"
 
 /*****  Código das funções exportadas pelo módulo  *****/
 
 
 /***********************************************************************
 *
-*  $FC Função: TMAT Efetuar operações de teste específicas para Matrizes
+*  $FC Função: TDADO Efetuar operações de teste específicas para um dado de 6 faces
 *
 *  $ED Descrição da função
 *     Efetua os diversos comandos de teste específicos para o módulo
@@ -99,7 +74,7 @@
       int  NumLidos = -1 ;
 	  int i = 0;
 	  int valorDado;
-      /* Testar MAT Criar Matriz */
+      /* Testar DADO Jogar Dado */
 
          if ( strcmp( ComandoTeste , JOGAR_DADO_CMD ) == 0 )
          {
@@ -115,8 +90,8 @@
 
             return TST_CondRetOK;
 
-         } /* fim ativa: Testar MAT Criar Matriz */
+         } /* fim ativa: Testar DADO Jogar Dado */
 
       return TST_CondRetNaoConhec ;
 
-   } /* Fim função: TMAT Efetuar operações de teste específicas para árvore */
+   } /* Fim função: TDADO Efetuar operações de teste específicas para um dado de 6 faces*/

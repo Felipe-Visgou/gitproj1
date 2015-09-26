@@ -17,11 +17,12 @@ LES - Laboratório de Engenharia de Software DI/PUC-Rio
 >>>    1  Linha:    10  Retorno errado ao mover a peca Deveria ser: 1  É: 0
 <<<    0  Linha:    11  Falha esperada foi recuperada. 
    13  == Mover Peca da casa 23 para a 0
-   16  == Destruir Tabuleiro
+   16  == Mover uma peça por todas as casas do tabuleiro de 0 a 23
+   43  == Destruir Tabuleiro
 
-!!! Número de linhas lidas:          17
-!!! Número de casos de teste:         5
-!!! Número comandos corretos:         4
+!!! Número de linhas lidas:          44
+!!! Número de casos de teste:         6
+!!! Número comandos corretos:        27
 !!! Número de falhas encontradas:     0
 
 !!! Não foram encontrados problemas

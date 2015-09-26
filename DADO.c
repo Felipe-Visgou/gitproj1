@@ -9,14 +9,14 @@
 *
 *  Projeto: Disciplinas INF 1628 / 1301
 *  Gestor:  DI/PUC-Rio
-*  Autores: avs - Arndt von Staa
-*			fvc - Felipe Vieira Côrtes
+*  Autores: fvc - Felipe Vieira Côrtes
 *			tbm - Tássio Borges de Miranda
 *			db  - Daniela Brazão
 *
 *  $HA Histórico de evolução:
-*     Versão  Autor    Data     Observações
-*	  1.0     tbm   02/set/2015	Início do desenvolvimento
+*     Versão  Autor			  Data     Observações
+*	  1.0     tbm, fvc   02/set/2015	Início do desenvolvimento
+
 *
 ***************************************************************************/
 
@@ -36,39 +36,37 @@
 *  ****/
 
 
-/* Funcao do Modulo */
-int dadorand(void);
+/*****  Código das funções encapsuladas no módulo  *****/
+
+int randint(int n);
 
 
-/* fim funcao do modulo */
+/*****  Código das funções exportadas pelo módulo  *****/
+
+/***************************************************************************
+*
+*  Função: DAD  &Gera numero aleatório
+*  ****/
 
 DAD_tpCondRet DAD_NumPular(int *NumeroCasas)
 {
 	*NumeroCasas = randint(6);
 
 	return DAD_CondRetOK;
+
 }/*Fim da função DAD_NumPular */
 
+
 /* Função usada pelo módulo */
-
-
-/* Returns an integer in the range [1, n].
- *
- * Uses rand(), and so is affected-by/affects the same seed.
- */
+/* Returns an integer in the range [1, n]*/
 int randint(int n) {
   int r;
   if ((n - 1) == RAND_MAX) {
     return rand();
   } else {
-    // Chop off all of the values that would cause skew...
     long end = RAND_MAX / n; // truncate skew
     assert (end > 0L);
     end *= n;
-
-    // ... and ignore results from rand() that fall above that limit.
-    // (Worst case the loop condition should succeed 50% of the time,
-    // so we can expect to bail out of this loop pretty quickly.
     while ((r = rand()) >= end);
 
 	r = (r|time(NULL));
