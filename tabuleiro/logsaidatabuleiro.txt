@@ -14,15 +14,13 @@ LES - Laboratório de Engenharia de Software DI/PUC-Rio
     6  == Mover Peca da casa 1 para casa 2
     9  == Mover Peca da casa 10 (vazia) para qualquer casa (errado)casa de origem esta vazia 
 
->>>    1  Linha:    10  Retorno errado ao mover a peca Deveria ser: 1  É: 0
-<<<    0  Linha:    11  Falha esperada foi recuperada. 
-   13  == Mover Peca da casa 23 para a 0
-   16  == Mover uma peça por todas as casas do tabuleiro de 0 a 23
-   43  == Destruir Tabuleiro
+   12  == Mover Peca da casa 23 para a 0
+   15  == Mover uma peça por todas as casas do tabuleiro de 0 a 23
+   42  == Destruir Tabuleiro
 
-!!! Número de linhas lidas:          44
+!!! Número de linhas lidas:          43
 !!! Número de casos de teste:         6
-!!! Número comandos corretos:        27
+!!! Número comandos corretos:        28
 !!! Número de falhas encontradas:     0
 
 !!! Não foram encontrados problemas

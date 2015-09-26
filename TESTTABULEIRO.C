@@ -1,27 +1,21 @@
 /***************************************************************************
-*  $MCI Módulo de implementação: Módulo de teste específico
-
-*	Módulo modificado para operar matrizes que armazenam listas!
+*  $MCI Módulo de implementação: TAB Tabuleiro de Gamão
 *
-*  Arquivo gerado:              TESTPECA.C
-*  Letras identificadoras:      TPec
+*  Arquivo gerado:              TABULEIRO.C
+*  Letras identificadoras:		TTAB
 *
 *  Nome da base de software:    Exemplo de teste automatizado
 *
 *  Projeto: Disciplinas INF 1628 / 1301
 *  Gestor:  DI/PUC-Rio
-*  Autores: avs - Arndt von Staa
-			fvc	- Felipe Vieira Cortes
+*  Autores:	fvc	- Felipe Vieira Cortes
 *			tbm - Tássio Borges de Miranda
 *			db  - Daniela Brazão
 *
 *  $HA Histórico de evolução:
-*     Versão  Autor    Data     Observações
-		4.00   fvc	 23/08/2015 Módulo modificado para operar matrizes
-*       3.00   avs   28/02/2003 Uniformização da interface das funções e
-*                               de todas as condições de retorno.
-*       2.00   avs   03/08/2002 Eliminação de código duplicado, reestruturação
-*       1.00   avs   15/08/2001 Início do desenvolvimento
+*     Versão  Autor		  Data     Observações
+*	  2		  fvc, tbm 	23/set/2015 término do deselvolvimento
+*     1       fvc, tbm	21/set/2015 início desenvolvimento
 *
 *  $ED Descrição do módulo
 *     Este módulo contém as funções específicas para o teste do
@@ -31,9 +25,9 @@
 *  $EIU Interface com o usuário pessoa
 *     Comandos de teste específicos para testar o módulo Matriz:
 *
-*     =criarpeca		<inxpec>	<cor>	<CondRet>				- Chama a função Pec_tpCondRet Pec_CriarPeca(tppPeca * PecCriado);
-*	  =destruirpeca		<inxpec>	<CondRet>							  - Chama a função Pec_tpCondRet Pec_DestruirPeca(tppPeca  Peca);
-*     =obtercorpeca		<inxpec>	<cor Esperada> <CondRet	>			 - Chama a função Pec_tpCondRet Pec_ObterCor(tppPeca  Peca, char *cor);
+*     =criartabuleiro		<CondRet>		- Chama a função    TAB_tpCondRet TAB_CriarTabuleiro(TAB_tppTabuleiro * pTab, void   ( * ExcluirValor ) ( void * pDado ) ) ;
+*	  =destruirtabuleiro	<CondRet>		- Chama a função  TAB_tpCondRet TAB_DestruirTabuleiro( TAB_tppTabuleiro pTab );
+*     =moverpeca			<casaOrig> <CasaDest>	<CondRet>	 - Chama a função TAB_tpCondRet TAB_MoverPeca( TAB_tppTabuleiro pTab, int casaOrigem, int casaDestino ) ;
 ***************************************************************************/
 
 #include    <string.h>
@@ -51,7 +45,6 @@
 #define     MOVER_PECA_CMD				"=moverpeca"
 
 TAB_tppTabuleiro Tab;
-/*****  Código das funções exportadas pelo módulo  *****/
 
 /***** Protótipos das funções encapuladas no módulo *****/
 
@@ -62,11 +55,11 @@ TAB_tppTabuleiro Tab;
 
 /***********************************************************************
 *
-*  $FC Função: TPec Efetuar operações de teste específicas para o Modulo Peca
+*  $FC Função: TTAB Efetuar operações de teste específicas para o Modulo Tabuleiro
 *
 *  $ED Descrição da função
 *     Efetua os diversos comandos de teste específicos para o módulo
-*     Peca sendo testado.
+*     de Tabuleiro de gamão.
 *
 *  $EP Parâmetros
 *     $P ComandoTeste - String contendo o comando
@@ -149,7 +142,7 @@ TAB_tppTabuleiro Tab;
 
    /***********************************************************************
 *
-*  $FC Função: TLIS -Destruir valor
+*  $FC Função: TTAB -Destruir valor
 *
 ***********************************************************************/
 
@@ -158,4 +151,4 @@ void DestruirValor( void * pValor )
 
       free( pValor ) ;
 
-   } /* Fim função: TLIS -Destruir valor */
+   } /* Fim função: TTAB-Destruir valor */

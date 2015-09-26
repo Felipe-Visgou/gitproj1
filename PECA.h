@@ -9,8 +9,7 @@
 *
 *  Projeto: Disciplinas INF 1628 / 1301
 *  Gestor:  DI/PUC-Rio
-*  Autores: avs - Arndt von Staa
-*			fvc - Felipe Vieira Côrtes
+*  Autores:	fvc - Felipe Vieira Côrtes
 *			tbm - Tássio Borges de Miranda
 *			db  - Daniela Brazão
 
@@ -58,7 +57,7 @@ typedef struct tgPeca * tppPeca;
 
 /***********************************************************************
 *
-*  $FC Função: DADPnt Criar Peça
+*  $FC Função: PEC Criar Peça
 *
 *  $ED Descrição da função
 *	  Cria uma nova peça
@@ -72,7 +71,7 @@ typedef struct tgPeca * tppPeca;
 
 /***********************************************************************
 *
-*  $FC Função: DADPnt Destruir Peça
+*  $FC Função: PEC Destruir Peça
 *
 *  $ED Descrição da função
 *	  Destroi uma peça
@@ -86,7 +85,7 @@ typedef struct tgPeca * tppPeca;
 
 /***********************************************************************
 *
-*  $FC Função: DADPnt Obter Cor
+*  $FC Função: PEC Obter Cor
 *
 *  $ED Descrição da função
 *	  Obtem cor de uma peca

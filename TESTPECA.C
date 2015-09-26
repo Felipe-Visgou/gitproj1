@@ -10,8 +10,7 @@
 *
 *  Projeto: Disciplinas INF 1628 / 1301
 *  Gestor:  DI/PUC-Rio
-*  Autores: avs - Arndt von Staa
-			fvc	- Felipe Vieira Cortes
+*  Autores:	fvc	- Felipe Vieira Cortes
 *			tbm - Tássio Borges de Miranda
 *			db  - Daniela Brazão
 *
@@ -25,8 +24,7 @@
 *
 *  $ED Descrição do módulo
 *     Este módulo contém as funções específicas para o teste do
-*     módulo Matriz. Ilustra como redigir um interpretador de comandos
-*     de teste específicos utilizando o arcabouço de teste para C.
+*     módulo Peca.
 *
 *  $EIU Interface com o usuário pessoa
 *     Comandos de teste específicos para testar o módulo Matriz:

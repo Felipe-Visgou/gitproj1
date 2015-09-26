@@ -8,8 +8,7 @@
 *
 *  Projeto: Disciplinas INF 1628 / 1301
 *  Gestor:  DI/PUC-Rio
-*  Autores: avs - Arndt von Staa
-*			fvc - Felipe Vieira Côrtes
+*  Autores: fvc - Felipe Vieira Côrtes
 *			tbm - Tássio Borges de Miranda
 *			db  - Daniela Brazão
 *
@@ -37,17 +36,13 @@
 ***********************************************************************/
 
 typedef struct tgPeca{
-	int *posicao;
-	/*Pontei para a posicao da peca, ainda deve ser alterado pelo tipo correto.*/
 	char cor;
-	/*Devemos usar um inteiro para facilitar a manipulacao da peça pela cor? Porem a cor tambem determia qual jogador 
-	tem a posse da peca*/
-	//struct tpp * jogador;
 } tpPeca;
 
 
 /*****  Dados encapsulados no módulo  *****/
 
+// vazio
 
 /*****  Código das funções exportadas pelo módulo  *****/
 
@@ -75,6 +70,8 @@ Pec_tpCondRet Pec_CriarPeca(tppPeca * PecCriado, char CorDaNovaPeca)
 
 Pec_tpCondRet Pec_DestruirPeca(tppPeca  Peca)
 {
+
+	free(Peca);
 	return Pec_CondRetOK;
 }
 

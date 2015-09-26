@@ -11,24 +11,24 @@ LES - Laboratório de Engenharia de Software DI/PUC-Rio
 
 !!!    0  Linha:     1  // SCRIPT DE TESTE PARA O MODULO DADOSPnt 
     3  == Criar DadoPontos
-    9  == Obter Dono
-   15  == Obter Valor
-   21  == Dobrar Dado
-   27  == Obter Dono
-   33  == Obter Valor
-   39  == Dobrar Dado
-   45  == Dobrar Dado
-   51  == Dobrar Dado
-   57  == Obter Valor
-   63  == Dobrar Dado
-   69  == Obter Dono
-   75  == Obter Valor Errado
->>>    1  Linha:    77   Valor da Partida Errado Deveria ser: 63  É: 64
-<<<    0  Linha:    78  Falha esperada foi recuperada. 
-   82  == Obter Valor
-   88  == Destruir DadoPontos
+    7  == Obter Dono
+   10  == Obter Valor
+   13  == Dobrar Dado
+   16  == Obter Dono
+   19  == Obter Valor
+   22  == Dobrar Dado
+   25  == Dobrar Dado
+   28  == Dobrar Dado
+   31  == Obter Valor
+   34  == Dobrar Dado
+   37  == Obter Dono
+   40  == Obter Valor Errado
+>>>    1  Linha:    41   Valor da Partida Errado Deveria ser: 63  É: 64
+<<<    0  Linha:    42  Falha esperada foi recuperada. 
+   44  == Obter Valor
+   47  == Destruir DadoPontos
 
-!!! Número de linhas lidas:          90
+!!! Número de linhas lidas:          48
 !!! Número de casos de teste:        15
 !!! Número comandos corretos:        14
 !!! Número de falhas encontradas:     0

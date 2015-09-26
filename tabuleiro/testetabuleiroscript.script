@@ -7,8 +7,7 @@
 =moverpeca 0 1 0
 
 == Mover Peca da casa 10 (vazia) para qualquer casa (errado)
-=moverpeca 10 23 0
-=recuperar
+=moverpeca 10 23 1
 
 == Mover Peca da casa 23 para a 0
 =moverpeca 23 0 0

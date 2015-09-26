@@ -173,7 +173,7 @@ TAB_tpCondRet TAB_MoverPeca( TAB_tppTabuleiro pTab, int casaOrigem, int casaDest
 		return TAB_CondRetErro;
 	}
 
-	// Avança para a casa destino
+	// Avança para a casa destino.
 	LIS_AvancarElementoCorrente(pTab->Casas, mov);
 
 	// Obtem a referencia para a lista nela armazenada

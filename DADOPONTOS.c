@@ -2,14 +2,14 @@
 *  $MCI Módulo de implementação: Gerador de numeroes aleatorios restrito ao
 *								 numero de faces 
 *
-*  Arquivo gerado:              DADO.c
-*  Letras identificadoras:      DAD
+*  Arquivo gerado:              DADOPONTOS.c
+*  Letras identificadoras:      DADPnt
 *
 *  Nome da base de software:    Exemplo de teste automatizado
 *
 *  Projeto: Disciplinas INF 1628 / 1301
 *  Gestor:  DI/PUC-Rio
-*  Autores: avs - Arndt von Staa
+*  Autores: 
 *			fvc - Felipe Vieira Côrtes
 *			tbm - Tássio Borges de Miranda
 *			db  - Daniela Brazão
@@ -21,9 +21,10 @@
 ***************************************************************************/
 
 #include <stdlib.h>
-#include <stdio.h>
-#include "DADO.H"  
-#include "GERAALT.H"
+#include <stdio.h> 
+#include <malloc.h>
+#include <string.h>
+#include "GENERICO.H"
 
 #define DADO_OWN
 #include "DADOPONTOS.h"
@@ -40,17 +41,12 @@
    typedef struct tgDadoPontos {
 		int valor;
 		/*Valor atual do dado de pontos*/
-		char * CorDoJogador;
+		char CorDoJogador;
 		/*Ponteiro para o jogador que pode usar o dado
 		*$EED Assertivas Estruturais
 		*	É NULL se o jogo esta no começo e ninguem fez nenhuma dobra */
 
    } tpDadoPontos ;
-/*
-   typedef struct tgPlayers {
-	   int id;
-   } tpPlayers;
-   /*Struct Temporaria*/
 
 /*****  Dados encapsulados no módulo  *****/
 
@@ -62,39 +58,31 @@
 *  Função: DADPnt Criar Dado de Pontos
 *  ****/
 
-DADPnt_tpCondRet DADPtn_CriarDado(tppDadoPontos * DadoCriado)
+DADPnt_tpCondRet DADPnt_CriarDado(tppDadoPontos * DadoPontoCriado)
 {
-	struct tgDadoPontos * DadoNovo;
-	DadoNovo = (tpDadoPontos*)malloc(sizeof(tpDadoPontos));
-	if(DadoNovo = NULL)
+
+	*DadoPontoCriado = (tpDadoPontos*)malloc(sizeof(tpDadoPontos));
+
+	if(DadoPontoCriado == NULL)
 		return DADPnt_CondRetFaltouMemoria;
-	DadoNovo->valor = 2;
+
+	(*DadoPontoCriado)->valor = 2;
 	/*Valor Inicial do Dado de Pontos*/
-	DadoNovo->CorDoJogador = NULL;
-	/*Quando o dado é criado, todos os jogadores podem usa-lo o inicio*/
-	(*DadoCriado) = DadoNovo;
+	(*DadoPontoCriado)->CorDoJogador = 's';
+	/*Quando o dado é criado, todos os jogadores podem usa-lo o inicio
+	 s determinado que qualquer jogador pode usar*/
 	return  DADPnt_CondRetOK;
 }
 /***************************************************************************
 *
-*  Função: DADPnt Dobrar Dado de Pontos
+*  Função: DADPnt Dobrar Dado de Pontos e Mudar "Dono" do Dado de Pontos
 *  ****/
 
-DADPnt_tpCondRet DADPtn_DobrarDado(tppDadoPontos DadoDobrar)
+DADPnt_tpCondRet DADPnt_DobrarDado(tppDadoPontos DadoDobrar, char CorNovoDono)
 {
 	DadoDobrar->valor = DadoDobrar->valor * 2;
 	/*Pega o valor atual do dado e multiplica por 2*/
-	return  DADPnt_CondRetOK;
-}
-/***************************************************************************
-*
-*  Função: DADPnt Mudar "Dono" do Dado de Pontos
-*  ****/
-
-DADPnt_tpCondRet DADPtn_MudDono(tppDadoPontos DadoDono, char * cor)
-{
-	DadoDono->CorDoJogador = cor;
-	/*Troca o jogador que pode realizar a dobra*/
+	DadoDobrar->CorDoJogador = CorNovoDono;
 	return  DADPnt_CondRetOK;
 }
 
@@ -103,12 +91,29 @@ DADPnt_tpCondRet DADPtn_MudDono(tppDadoPontos DadoDono, char * cor)
 *  Função: DADPnt Gerar Valor da Partida
 *  ****/
 
-DADPnt_tpCondRet DADPtn_ValorPartida(tppDadoPontos Dado, int * valorjogo)
+DADPnt_tpCondRet DADPnt_ValorPartida(tppDadoPontos DadoAtual, int * valorjogo)
 {
-	if(Dado->CorDoJogador == NULL)
-		*valorjogo = 1;
+	if(DadoAtual->CorDoJogador == 's' )
+		*valorjogo = 2;
 	else
-		*valorjogo = Dado->valor;
+		*valorjogo = DadoAtual->valor;
+	return DADPnt_CondRetOK;
+}
+
+/***************************************************************************
+*
+*  $FC Função: DADPnt Obter "Dono" do dado de pontos atual
+*
+*  $ED Descrição da função
+*	  Retorno o dono do Dado
+*  $FV Valor retonado
+*     DADPnt_CondRetOK
+*
+***********************************************************************/
+
+DADPnt_tpCondRet DADPnt_ObterDono(tppDadoPontos DadoPonto, char * CorDonoAtual)
+{
+	*CorDonoAtual = DadoPonto->CorDoJogador;
 	return DADPnt_CondRetOK;
 }
 
@@ -117,10 +122,10 @@ DADPnt_tpCondRet DADPtn_ValorPartida(tppDadoPontos Dado, int * valorjogo)
 *  Função: DADPnt Destruir Dado de Pontos
 *  ****/
 
-DADPnt_tpCondRet DADPtn_DestruirDado(tppDadoPontos Dado)
+DADPnt_tpCondRet DADPnt_DestruirDado(tppDadoPontos Dado)
 {
-	Dado->CorDoJogador = NULL;
-	Dado->valor = 0;
+	if(Dado == NULL)
+		return DADPnt_CondRetDadoPontosNaoExiste;
 	free(Dado);
 	return DADPnt_CondRetOK;
 }

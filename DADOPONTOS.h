@@ -9,8 +9,7 @@
 *
 *  Projeto: Disciplinas INF 1628 / 1301
 *  Gestor:  DI/PUC-Rio
-*  Autores: avs - Arndt von Staa
-*			fvc - Felipe Vieira Côrtes
+*  Autores: fvc - Felipe Vieira Côrtes
 *			tbm - Tássio Borges de Miranda
 *			db  - Daniela Brazão
 
@@ -31,11 +30,13 @@
    #define DADOPONTOS_EXT extern
 #endif
 
+#include "Generico.h"
+
 typedef struct tgDadoPontos * tppDadoPontos;
 typedef struct tgPlayers * tppPlayers;
 /***********************************************************************
 *
-*  $TC Tipo de dados: MAT Condicoes de retorno
+*  $TC Tipo de dados: DADPnt Condicoes de retorno
 *
 *
 ***********************************************************************/
@@ -48,7 +49,7 @@ typedef struct tgPlayers * tppPlayers;
          DADPnt_CondRetErro = 1 ,
                /* Estrutura do DadoPontos está errada */
 
-         DADPnt_CondRetMatrizNaoExiste = 2 ,
+         DADPnt_CondRetDadoPontosNaoExiste = 2 ,
                /* DadoPontos não existe */
 
          DADPnt_CondRetFaltouMemoria = 3
@@ -69,35 +70,21 @@ typedef struct tgPlayers * tppPlayers;
 *
 ***********************************************************************/
 
-DADPnt_tpCondRet DADPtn_CriarDado(tppDadoPontos * DadoCriado);
+DADPnt_tpCondRet DADPnt_CriarDado(tppDadoPontos * DadoCriado);
 
 /***************************************************************************
 *
-*  $FC Função: DADPnt Dobrar Dado de Pontos
+*  $FC Função: DADPnt Dobrar Dado de Pontos e Mudar "Dono" do Dado de Pontos
 *
 *  $ED Descrição da função
-*	  Dobra o valor da partida
+*	  Dobra o valor da partida e Muda o jogador que possa usar o Dado de Pontos
 *  $FV Valor retonado
 *     DADPnt_CondRetOK
 *     DADPnt_CondRetFaltouMemoria
 *
 ***********************************************************************/
 
-DADPnt_tpCondRet DADPtn_DobrarDado(tppDadoPontos DadoDobrar);
-
-/***************************************************************************
-*
-*  $FC Função: DADPnt Mudar "Dono" do Dado de Pontos
-*
-*  $ED Descrição da função
-*	  Muda o jogador que possa usar o Dado de Pontos
-*  $FV Valor retonado
-*     DADPnt_CondRetOK
-*     DADPnt_CondRetFaltouMemoria
-*
-***********************************************************************/
-
-DADPnt_tpCondRet DADPtn_MudDono(tppDadoPontos DadoDono, char * cor);
+DADPnt_tpCondRet DADPnt_DobrarDado(tppDadoPontos DadoDobrar, char CorNovoDono);
 
 /***************************************************************************
 *
@@ -110,7 +97,20 @@ DADPnt_tpCondRet DADPtn_MudDono(tppDadoPontos DadoDono, char * cor);
 *
 ***********************************************************************/
 
-DADPnt_tpCondRet DADPtn_ValorPartida(tppDadoPontos Dado, int * valorjogo);
+DADPnt_tpCondRet DADPnt_ValorPartida(tppDadoPontos Dado, int * valorjogo);
+
+/***************************************************************************
+*
+*  $FC Função: DADPnt Obter "Dono" do dado de pontos atual
+*
+*  $ED Descrição da função
+*	  Retorno o dono do Dado
+*  $FV Valor retonado
+*     DADPnt_CondRetOK
+*
+***********************************************************************/
+
+DADPnt_tpCondRet DADPnt_ObterDono(tppDadoPontos Dado, char * corRecebida);
 
 /***************************************************************************
 *
@@ -124,7 +124,7 @@ DADPnt_tpCondRet DADPtn_ValorPartida(tppDadoPontos Dado, int * valorjogo);
 *
 ***********************************************************************/
 
-DADPnt_tpCondRet DADPtn_DestruirDado(tppDadoPontos Dado);
+DADPnt_tpCondRet DADPnt_DestruirDado(tppDadoPontos Dado);
 
 #undef DADOPONTOS_EXT
 
