@@ -18,19 +18,19 @@ LES - Laboratório de Engenharia de Software DI/PUC-Rio
  
  dado: 2
  
- dado: 6
- 
- dado: 6
- 
- dado: 1
- 
- dado: 6
- 
- dado: 3
+ dado: 2
  
  dado: 4
  
+ dado: 1
+ 
+ dado: 4
+ 
+ dado: 3
+ 
  dado: 6
+ 
+ dado: 4
 
 
 !!! Número de linhas lidas:          14

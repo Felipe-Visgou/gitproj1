@@ -1,5 +1,9 @@
 INF1301 - Trabalho 2
 
+Esta pasta contém: - Os relatórios de cada integrante do grupo.
+		   - O pdf INF1301_Escopo do Trabalho que possui a Especificação de Requisitos,
+ Arquitetura do Programa, Modelo Estrutural da aplicação com exemplo, e assertivas de entrada e saída.
+
 Pasta Tabuleiro : Contém um script de teste para o módulo de tabuleiro de gamão
 sem as regras implementadas, um executável gerado a partir do conteúdo da pasta source,
 um arquivo .bat que executa o teste gerando um log de saída.
