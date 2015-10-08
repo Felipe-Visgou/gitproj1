@@ -1,1 +1,0 @@
-TRAB2-3 /stestepecascript > logtestepeca.txt

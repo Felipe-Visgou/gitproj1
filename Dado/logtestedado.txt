@@ -4,7 +4,7 @@ LES - Laboratório de Engenharia de Software DI/PUC-Rio
       Arcabouço de teste de módulos C  (c) 2006
 
 ---------------------------------------------
-      Construto sob teste: TRAB2-2
+      Construto sob teste: TRAB2-4
 
       Arquivo de teste:    testedadoscript
 
@@ -16,21 +16,21 @@ LES - Laboratório de Engenharia de Software DI/PUC-Rio
  
  dado: 1
  
- dado: 6
+ dado: 2
  
- dado: 6
+ dado: 2
  
  dado: 4
  
  dado: 1
  
- dado: 6
+ dado: 4
  
  dado: 3
  
  dado: 6
  
- dado: 6
+ dado: 4
 
 
 !!! Número de linhas lidas:          14

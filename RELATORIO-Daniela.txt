@@ -1,0 +1,8 @@
+Data	Horas Trabalhadas	Tipo de Tarefa																		Descrição da Tarefa Realizada							
+14/09	2					Especificar Módulos, Especificar Funções											Finalização do entendimento do enunciado do segundo trabalho, início da projeção do segundo trabalho, desenho do modelo estrutural do programa e definição da sua arquitetura.
+15/09	3					Codificar Módulo																	Início da codificação dos módulos DADO e DADOPONTOS. 	
+16/09	2					Revisar Código do Módulo, Projetar													Revisar o código do módulo DADOPONTOS e início da projeção do módulo PECA.	
+21/09	2					Codificar Módulo																	Codificação do módulo PECA.
+23/09	3					Especificar Módulos																	Escrever as especificações dos requisitos funcionais, não funcionais e das restrições.
+25/09	1					Revisar Script de Teste, Diagnosticar e corrigir os problemas encontrados			Teste do funcionamento dos módulos DADO, DADOPONTOS, PECA e TABULEIRO.
+28/09	2					Revisar Especificações de Requisitos												Revisar o pdf de especificações de requisitos.

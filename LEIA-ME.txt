@@ -1,0 +1,46 @@
+INF1301 - Trabalho 2
+
+Esta pasta contém: - Os relatórios de cada integrante do grupo.
+		   - O pdf INF1301_Escopo do Trabalho que possui a Especificação de Requisitos,
+ Arquitetura do Programa, Modelo Estrutural da aplicação com exemplo, e assertivas de entrada e saída.
+
+Pasta Tabuleiro : Contém um script de teste para o módulo de tabuleiro de gamão
+sem as regras implementadas, um executável gerado a partir do conteúdo da pasta source,
+um arquivo .bat que executa o teste gerando um log de saída.
+	-TRAB2-1.exe
+	-testetabuleiroscript.script
+	-testetabuleiro.bat
+	-logsaidatabuleiro.txt
+Pasta source tabuleiro : Contém os arquivos fonte usados para a geração do executável listado anteriormente
+
+Pasta peca : Contém um script de teste para o módulo de peça que representa peças do jogo de gamão,
+ um executável gerado a partir do conteúdo da pasta source peca, um arquivo .bat que executa o teste
+ gerando um log de saída.
+	-TAB2-2.exe
+	-testepecascript.script
+	-testepeca.bat
+	-logtestepeca.txt
+Pasta source peca : Contém os arquivos fonte usados para a geração do executável listado anteriormente
+
+Pasta DadoPontos :  Contém um script de teste para o módulo de dado pontos, que representa o dado
+ de dobrar os pontos com as faces 2, 4, 8, 16, 32, 64 do jogo de gamão, um arquivo executável gerado
+a partir do conteúdo da pasta source dadopontos e um arquivo .bat que realiza o teste gerando um log de saída.
+	-TAB2-3.exe
+	-testeDadoPontos.script
+	-testeDadoPontos.bat
+	-logtesteDadosPonto.txt 
+Pasta source dadopontos : Contém os arquivos fonte usados para a geração do executável lista anteriormente
+
+Pasta Dado: Contém um script de teste para o módulo de dado que simula um dado de 6 faces sendo jogado,
+um arquivo executável gerado pelo conteúdo da pasta source dado, um arquivo .bat que executa todo o teste
+gerando um log de saída.
+	-TRAB2-4.exe
+	-testeadodoscript.script
+	-testedado.bat
+	-logtestedado.txt
+Pasta Source Dado : Contém todos os arquivos necessários para a geração do executável dito anteriormente
+
+----------------------- COMO USAR -----------------------------------
+Para testar cada módulo basta clicar duas vezes no arquivo em lotes (.bat) referente ao módulo. 
+Será gerado um log contendo as informações do teste realizado.
+

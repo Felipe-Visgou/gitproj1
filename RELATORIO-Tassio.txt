@@ -1,0 +1,9 @@
+Data	 	Horas Trabalhadas		 Tipo Tarefa	     							Descrição da Tarefa Realizada
+
+14/09			3h		Especificar os módulos/ especificar as funções      				Desenhando o modelo estrutural do programa e definindo sua arquitetura
+15/09			3h		Codificar Módulo								Codifigar o modulo dado e dadopontos, modulos que náo são dependentes
+16/09			2h		Projetar/especificar as funções/Revisar Codigo Módulo				Definido como serão as estruturas dos Módulos Peça, suas funções de acesso e a revisão do módulo Dado Pontos.
+21/09			2h		Codificar Módulo/Revisar especificações						Modulo Peca codificado. tendo na estrutura apenas a cor, codificando teste para o módulo de dados, criando uma função que gera números aleatórios	
+23/09			2h		Redigir Scripts de teste/revisar código do módulo				Revisado as funçoes testes nos modulos dadopontos e peças, codificando  modulo tabuleiro e o seu teste.
+25/09			1h		codificar/Redigir script de teste/realizar testes/revisar script de teste	Teste Dado Pontos, Teste de peça, teste de dado e teste de tabuleiro funcionando sem erros.
+26/09			1h		Revisar Especificações								Revisão dos modelos, das arquiteturas. Criação do exemplo de modelo.
